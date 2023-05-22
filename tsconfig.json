@@ -12,12 +12,12 @@
     "alwaysStrict": true,
     "strictNullChecks": true,
     "sourceMap": true,
-    "types": ["jest", "@types/jest", "node", "reflect-metadata"],
+    "types": ["node", "reflect-metadata"],
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "strict": false
   },
   "include": ["./src/", "./test/**/*.ts"],
-  "exclude": ["node_modules", "dist", "build", "./src/coverage"]
+  "exclude": ["node_modules", "dist", "build"]
 }
