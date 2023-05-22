@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "lib": ["ES2020"],
+    "module": "CommonJS",
+    "target": "ES2020",
+    "moduleResolution": "node",
+    "outDir": "./dist",
+    "declaration": true,
+    "declarationDir": "./dist",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "alwaysStrict": true,
+    "strictNullChecks": true,
+    "sourceMap": true,
+    "types": ["jest", "@types/jest", "node", "reflect-metadata"],
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "strict": false
+  },
+  "include": ["./src/", "./test/**/*.ts"],
+  "exclude": ["node_modules", "dist", "build", "./src/coverage"]
+}
