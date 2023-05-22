@@ -24,10 +24,14 @@ export class FileReceiverService implements IFileReceiverService {
         fileLocation: file.linkUrl,
       };
 
+      console.log(`Queue Message: ${payload}`);
+
       const sendMessage = await this._gcpService.sendMessageTOPubSub(
         payload,
         "ge-queue"
       );
+
+      console.log(`Message Id: ${sendMessage}`);
 
       return file;
     } catch (error) {

@@ -1,3 +1,4 @@
+import { BadRequest } from "../errors/BadRequest";
 import { IFileReceiverService } from "../interfaces/IFileReceiverService";
 import BaseController from "./BaseController";
 import * as express from "express";
@@ -14,6 +15,12 @@ export default class FileReceiverController extends BaseController {
     try {
       // validate input
       this.validateRequest(req);
+
+      if (!req.file) {
+        throw new BadRequest("Please upload a file.");
+      }
+
+      console.log(`File: ${req.file.originalname} successfully uploaded.`);
 
       const tailNumber = req.body.tailNumber;
       const file = req.file;
