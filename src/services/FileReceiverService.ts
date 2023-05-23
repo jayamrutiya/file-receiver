@@ -66,6 +66,7 @@ export class FileReceiverService implements IFileReceiverService {
 
       return file;
     } catch (error) {
+      console.log("Errrrr", error);
       // // update file status = FAILED in document table
       // document.status = FileStatusEnum["FAILED"];
       // await documentEntity.save(document);
