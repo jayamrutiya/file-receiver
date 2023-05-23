@@ -7,6 +7,8 @@ import { IFileReceiverService } from "../interfaces/IFileReceiverService";
 import { FileReceiverService } from "../services/FileReceiverService";
 import { IGCPService } from "../interfaces/IGCPService";
 import { GCPService } from "../services/GCPService";
+import { IDatabaseService } from "../interfaces/IDatabaseService";
+import { DatabaseService } from "./db";
 
 const iocContainer = new Container();
 
@@ -14,6 +16,7 @@ const iocContainer = new Container();
 iocContainer.load(buildProviderModule());
 
 // Services
+iocContainer.bind<IDatabaseService>(TYPES.DatabaseService).to(DatabaseService);
 iocContainer.bind<ISFTPService>(TYPES.SFTPService).to(SFTPService);
 iocContainer
   .bind<IFileReceiverService>(TYPES.FileReceiverService)

@@ -23,11 +23,13 @@ export default class FileReceiverController extends BaseController {
       console.log(`File: ${req.file.originalname} successfully uploaded.`);
 
       const tailNumber = req.body.tailNumber;
+      const id = Number(req.body.id);
       const file = req.file;
 
       const fileManager = await this._filereceiverService.fileManager(
         tailNumber,
-        file
+        file,
+        id
       );
 
       // Return response
