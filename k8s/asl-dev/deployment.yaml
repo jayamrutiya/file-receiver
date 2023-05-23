@@ -99,6 +99,26 @@ spec:
                 secretKeyRef:
                   name: sftp-service-secret
                   key: SECURE
+            - name: API_PORT
+              valueFrom:
+                secretKeyRef:
+                  name: sftp-service-secret
+                  key: API_PORT
+            - name: API_ROOT
+              valueFrom:
+                secretKeyRef:
+                  name: sftp-service-secret
+                  key: API_ROOT
+            - name: API_VERSION
+              valueFrom:
+                secretKeyRef:
+                  name: sftp-service-secret
+                  key: API_VERSION
+            - name: API_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: sftp-service-secret
+                  key: API_HOST
 ---
 apiVersion: v1
 kind: Service
